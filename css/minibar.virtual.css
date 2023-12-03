@@ -318,6 +318,10 @@
     border-radius: 4px;
 }
 
+.pub_head{
+    width:30px;
+    height: 10px;
+}
 .timeline li .details h5,
 .timeline li .details p {
     margin-bottom: 0;

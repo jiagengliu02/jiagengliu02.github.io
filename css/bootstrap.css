@@ -8368,6 +8368,11 @@ button.bg-dark:focus {
   padding-top: 1rem !important;
 }
 
+.pt-my {
+  padding-bottom: 5rem !important;
+  padding-top: 3rem !important;
+}
+
 .pr-3,
 .px-3 {
   padding-right: 1rem !important;
@@ -8412,7 +8417,7 @@ button.bg-dark:focus {
 }
 
 .pt-5,
-.py-5 {
+.py-5{
   padding-top: 3rem !important;
 }
 
@@ -8421,9 +8426,12 @@ button.bg-dark:focus {
   padding-right: 3rem !important;
 }
 
-.pb-5,
-.py-5 {
+.pb-5 {
   padding-bottom: 3rem !important;
+}
+
+.py-5 {
+  padding-bottom: 0rem !important;
 }
 
 .pl-5,

@@ -55,7 +55,7 @@
 .vg-page {
   position: relative;
   display: block;
-  padding: 80px 0;
+  padding: 0px 0;
   width: 100%;
   overflow: hidden;
 }
@@ -147,6 +147,27 @@
   height: 350px;
   background-color: #dfe0e6;
   overflow: unset;
+}
+
+.publication_image{
+  height:100%;
+  width:20%;
+  float: left;
+  margin-right: 3%;
+  padding: 20px;
+  /* float: left; */
+}
+
+.publication_image2{
+  height:100%;
+  width:18%;
+  float: left;
+  padding: 20px;
+  /* float: left; */
+}
+
+.large {
+  font-size: large;
 }
 
 .page-about .img-place::before {
