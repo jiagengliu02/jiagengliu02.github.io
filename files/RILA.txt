@@ -1,0 +1,8 @@
+@inproceedings{
+anonymous2024rila,
+title={{RILA}: Reflective and Imaginative Language Agent for Zero-Shot Semantic Audio-Visual Navigation},
+author={Anonymous},
+booktitle={Conference on Computer Vision and Pattern Recognition 2024},
+year={2024},
+url={https://openreview.net/forum?id=n0r3vtY81S}
+}

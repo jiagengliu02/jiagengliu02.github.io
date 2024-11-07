@@ -1,0 +1,8 @@
+@inproceedings{
+wang2024architect,
+title={Architect: Generating Vivid and Interactive 3D Scenes with Hierarchical 2D Inpainting},
+author={Yian Wang and Xiaowen Qiu and Jiageng Liu and Zhehuan Chen and Jiting Cai and Yufei Wang and Tsun-Hsuan Wang and Zhou Xian and Chuang Gan},
+booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+year={2024},
+url={https://openreview.net/forum?id=JHg9eNuw6p}
+}

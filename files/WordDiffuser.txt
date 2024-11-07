@@ -1,0 +1,10 @@
+@INPROCEEDINGS{10494249,
+  author={Xu, Yuhang and Xia, Wanxu and Chen, Yipeng and Liu, Jiageng and You, Weitao},
+  booktitle={2023 16th International Symposium on Computational Intelligence and Design (ISCID)}, 
+  title={WordDiffuser: Helping Beginners Cognize and Memorize Glyph-Semantic Pairs Using Diffusion}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={84-89},
+  keywords={Reviews;Semantics;Education;Symbols;Cognition;Cultural differences;History;AI-Generated Content;Symbolic;Stable Diffusion;Recognition;Characters},
+  doi={10.1109/ISCID59865.2023.00028}}

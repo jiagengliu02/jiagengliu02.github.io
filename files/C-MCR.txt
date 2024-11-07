@@ -1,0 +1,9 @@
+@inproceedings{DBLP:conf/nips/WangZCHLYTLWZZ23,
+  author={Zehan Wang and Yang Zhao and Xize Cheng and Haifeng Huang and Jiageng Liu and Aoxiong Yin and Li Tang and Linjun Li and Yongqi Wang and Ziang Zhang and Zhou Zhao},
+  title={Connecting Multi-modal Contrastive Representations},
+  year={2023},
+  cdate={1672531200000},
+  url={http://papers.nips.cc/paper_files/paper/2023/hash/46362971bfc3a97e6a271f2eb90fba17-Abstract-Conference.html},
+  booktitle={NeurIPS},
+  crossref={conf/nips/2023}
+}
