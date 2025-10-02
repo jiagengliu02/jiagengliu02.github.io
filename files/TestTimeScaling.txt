@@ -1,0 +1,9 @@
+@misc{yang2025mindjourneytesttimescalingworld,
+      title={MindJourney: Test-Time Scaling with World Models for Spatial Reasoning}, 
+      author={Yuncong Yang and Jiageng Liu and Zheyuan Zhang and Siyuan Zhou and Reuben Tan and Jianwei Yang and Yilun Du and Chuang Gan},
+      year={2025},
+      eprint={2507.12508},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2507.12508}, 
+}
