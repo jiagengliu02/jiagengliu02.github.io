@@ -1,0 +1,4 @@
+· (NeurIPS2024) ARCHITECT: Generating Vivid and Interactive 3D Scenes with Hierarchical 2D Inpainting
+· (CVPR2025) VIRTUAL COMMUNITY: A Generative Social World For Embodied AI
+· (CVPR2024) RILA: Reflective and Imaginative Language Agent for Zero-Shot Semantic Audio-Visual Navigation
+· (NeurIPS2023) Connecting Multi-modal Contrastive Representations
