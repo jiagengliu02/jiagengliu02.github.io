@@ -1,0 +1,9 @@
+@misc{liu2025edit3rinstant3dscene,
+      title={Edit3r: Instant 3D Scene Editing from Sparse Unposed Images}, 
+      author={Jiageng Liu and Weijie Lyu and Xueting Li and Yejie Guo and Ming-Hsuan Yang},
+      year={2025},
+      eprint={2512.25071},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2512.25071}, 
+}
