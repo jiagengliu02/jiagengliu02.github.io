@@ -1,0 +1,6 @@
+@misc{liu2026lsmvlm,
+      title={LSM-VLM: Long-Short Memory VLM with World-Model for 3D Spatial Reasoning},
+      author={Jiageng Liu and Nirav Savaliya and Faizan Siddiqui and Sahith Reddy Chada and Enna Sachdeva},
+      year={2026},
+      note={Preprint},
+}

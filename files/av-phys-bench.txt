@@ -1,0 +1,9 @@
+@misc{cui2026avphysbench,
+      title={Do Joint Audio-Video Generation Models Understand Physics?},
+      author={Zijun Cui and Xiulong Liu and Hao Fang and Mingwei Xu and Jiageng Liu and Zexin Xu and Weiguo Pian and Shijian Deng and Feiyu Du and Chenming Ge and Yapeng Tian},
+      year={2026},
+      eprint={2605.07061},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2605.07061},
+}
