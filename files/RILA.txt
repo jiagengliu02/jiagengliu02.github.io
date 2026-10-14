@@ -1,8 +1,9 @@
-@inproceedings{
-anonymous2024rila,
-title={{RILA}: Reflective and Imaginative Language Agent for Zero-Shot Semantic Audio-Visual Navigation},
-author={Anonymous},
-booktitle={Conference on Computer Vision and Pattern Recognition 2024},
-year={2024},
-url={https://openreview.net/forum?id=n0r3vtY81S}
+@inproceedings{Yang_2024_CVPR,
+  title={{RILA}: Reflective and Imaginative Language Agent for Zero-Shot Semantic Audio-Visual Navigation},
+  author={Yang, Zeyuan and Liu, Jiageng and Chen, Peihao and Cherian, Anoop and Marks, Tim K. and Le Roux, Jonathan and Gan, Chuang},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month={June},
+  year={2024},
+  pages={16251--16261},
+  url={https://openaccess.thecvf.com/content/CVPR2024/html/Yang_RILA_Reflective_and_Imaginative_Language_Agent_for_Zero-Shot_Semantic_Audio-Visual_CVPR_2024_paper.html}
 }
