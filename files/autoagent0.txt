@@ -1,0 +1,7 @@
+@misc{liu2026autoagent0,
+      title={{AutoAgent0}: An Agentic Runtime for Safe Closed-Loop Driving},
+      author={Jiageng Liu and Seth Z. Zhao and Zewei Zhou and Alejandro Huerta and Aidan Bayer-Calvert and Yuxin Bao and Haotian Lin and Robert Spataru and Zijun Cui and Yining Hong and Bolei Zhou and Jiaqi Ma},
+      year={2026},
+      note={Preprint},
+      url={https://jiagengliu02.github.io/AutoAgent0/},
+}
