@@ -22,13 +22,13 @@
     {
       "id": "esi-bench",
       "title": "ESI-Bench",
-      "file": "esi-spatial.mp4",
-      "url": "https://esi-bench.github.io/static/imgs/specular_reflection/reflection_spatial_relation.mp4",
+      "file": "esi-pick.mov",
+      "url": "https://esi-bench.github.io/static/vids/qualitative/pick_up.mov",
       "start": 0,
-      "duration": 6.8,
-      "caption": "Mirror reflection and spatial relations \u00b7 1.42x",
+      "duration": 2.4,
+      "caption": "Robot manipulation: pick up \u00b7 0.5x",
       "kind": "official-video-excerpt",
-      "source_sha256": "8e641218e0cef704302e2e7e9ca095899ab84f6be1b3d73405e7d633217034fb",
+      "source_sha256": "d177d16333b547dfdffb4f9a89385fd15df1bc54c9168e177205a668b8934188",
       "width": 320,
       "height": 180
     },
