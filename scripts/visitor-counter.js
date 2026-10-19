@@ -1,25 +1,25 @@
-// The map is a normal image and also works with JavaScript disabled.
+// The counter is a normal image and also works with JavaScript disabled.
 (() => {
-  const map = document.getElementById('visitor-map');
-  const image = document.getElementById('visitor-map-image');
-  const status = document.getElementById('visitor-map-status');
-  const message = document.getElementById('visitor-map-message');
-  const retry = document.getElementById('visitor-map-retry');
-  if (!map || !image || !status || !message || !retry) return;
+  const counter = document.getElementById('visitor-counter');
+  const image = document.getElementById('visitor-counter-image');
+  const status = document.getElementById('visitor-counter-status');
+  const message = document.getElementById('visitor-counter-message');
+  const retry = document.getElementById('visitor-counter-retry');
+  if (!counter || !image || !status || !message || !retry) return;
   const source = image.src;
   let timeout;
 
   function loaded() {
     clearTimeout(timeout);
-    map.hidden = false;
+    counter.hidden = false;
     status.hidden = true;
   }
 
   function unavailable() {
     clearTimeout(timeout);
-    map.hidden = true;
+    counter.hidden = true;
     status.hidden = false;
-    message.textContent = 'The visitor map could not be loaded.';
+    message.textContent = 'The visitor counter could not be loaded.';
     retry.hidden = false;
   }
 
@@ -27,7 +27,7 @@
   image.addEventListener('error', unavailable);
   retry.addEventListener('click', () => {
     retry.hidden = true;
-    message.textContent = 'Loading visitor map…';
+    message.textContent = 'Loading visitor counter…';
     timeout = setTimeout(unavailable, 15000);
     image.src = `${source}?reload=${Date.now()}`;
   });
