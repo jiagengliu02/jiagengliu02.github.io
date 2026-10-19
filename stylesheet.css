@@ -50,3 +50,24 @@ figcaption {
   color: #555;
   text-align: center;
 }
+
+.animation-controls {
+  padding: 0 20px 8px;
+  text-align: right;
+}
+
+.animation-controls button {
+  padding: 5px 10px;
+  border: 1px solid #c7d1df;
+  border-radius: 5px;
+  background: #fff;
+  color: #40536b;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.project-preview img {
+  display: block;
+  border-radius: 4px;
+}

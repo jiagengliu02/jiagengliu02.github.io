@@ -1,0 +1,125 @@
+{
+  "width": 320,
+  "height": 218,
+  "duration_seconds": 4.8,
+  "fps": 10,
+  "loop": true,
+  "projects": [
+    {
+      "id": "autoagent0",
+      "title": "AutoAgent0",
+      "file": "auto-main.mp4",
+      "url": "https://jiagengliu02.github.io/AutoAgent0/assets/videos/AutoAgent0_demo.mp4",
+      "start": 46,
+      "duration": 9.6,
+      "crop": "crop=1280:640:80:390",
+      "caption": "Verified obstacle bypass \u00b7 2x",
+      "kind": "official-video-excerpt",
+      "source_sha256": "e25f295a5b9650f50603c482d70dc6898fd51153cbb2cd4f4cc08ebb010dfdb0"
+    },
+    {
+      "id": "esi-bench",
+      "title": "ESI-Bench",
+      "file": "esi-bench.mp4",
+      "url": "https://esi-bench.github.io/static/vids/qualitative/pour_down.mp4",
+      "start": 0,
+      "duration": 4.8,
+      "caption": "Embodied interaction: pour down",
+      "kind": "official-video-excerpt",
+      "source_sha256": "4c56789a6eeb36d5014ce2bc835b85e31ea07baf2b0e31b7788e20dbc817a5e4"
+    },
+    {
+      "id": "av-phys-bench",
+      "title": "AV-Phys-Bench",
+      "file": "av-coin.mp4",
+      "url": "https://huggingface.co/datasets/ZijunCui/AV-Phys-Bench/resolve/main/videos/Seedance-2.0/C1-1-01.mp4",
+      "start": 0.5,
+      "duration": 4.8,
+      "caption": "Seedance 2.0 \u00b7 spinning coin \u00b7 silent",
+      "kind": "official-video-excerpt",
+      "source_sha256": "7bc15703362e73acb92138be47a8b11cf7c44fb2e86e8a74d7a706737871e5c8"
+    },
+    {
+      "id": "edit3r",
+      "title": "Edit3r",
+      "file": "edit3r.mp4",
+      "url": "https://edit3r.github.io/edit3r/static/videos/example1.mp4",
+      "start": 0.2,
+      "duration": 4.8,
+      "crop": "crop=1032:590:137:336",
+      "caption": "Original \u2192 edited: decorate for a party",
+      "kind": "official-video-excerpt",
+      "source_sha256": "a1d58bfdde5452c8c80ff35165a6611a78487f0e6f812f689fe175d08afd2fc0"
+    },
+    {
+      "id": "virtual-community",
+      "title": "Virtual Community",
+      "file": "virtual-community.mp4",
+      "url": "https://virtual-community-ai.github.io/_astro/traffic_demo.DEFnM9xd.mp4",
+      "start": 17,
+      "duration": 4.8,
+      "crop": "crop=1920:920:0:160",
+      "caption": "City-scale traffic simulation",
+      "kind": "official-video-excerpt",
+      "source_sha256": "d97b0fb6dc4212e3bacb33deb5f30afadef8787bab854cb8aea017eb275da456"
+    },
+    {
+      "id": "mindjourney",
+      "title": "MindJourney",
+      "file": "mindjourney.mp4",
+      "url": "https://umass-embodied-agi.github.io/MindJourney/static/videos/traj_expansion.mov",
+      "start": 0,
+      "duration": 8,
+      "caption": "World-model trajectory expansion \u00b7 1.67x",
+      "kind": "official-video-excerpt",
+      "source_sha256": "7431c6011b2d35953839e786f0099eddde3f30edce4ad42950934221fe8d89af"
+    },
+    {
+      "id": "architect",
+      "title": "ARCHITECT",
+      "file": "architect-restaurant.mp4",
+      "url": "https://wangyian-me.github.io/Architect/static/videos/restaurant.mp4",
+      "start": 0,
+      "duration": 4.8,
+      "caption": "Generated 3D scene: restaurant",
+      "kind": "official-video-excerpt",
+      "source_sha256": "53e3ef30fa6bebd6a8b01bc95908b70b31bac906a5ed8e6341e7cd07e1a7c9ff"
+    },
+    {
+      "id": "rila",
+      "title": "RILA",
+      "file": "rila.mp4",
+      "url": "https://rila-savn.github.io/RILA/images/demo.mp4",
+      "start": 10,
+      "duration": 4.8,
+      "crop": "crop=520:245:260:175",
+      "caption": "Audio-visual navigation: map + agent view",
+      "kind": "official-video-excerpt",
+      "source_sha256": "755b9ff4575103b324499798188ccc1da8fd629e3872d9cd0596cdaf08085bba"
+    },
+    {
+      "id": "lsm-vlm",
+      "kind": "method-schematic",
+      "source": "files/lsm-vlm.pdf",
+      "note": "Illustration of the method; not a recorded inference run. Demo URL returned 404."
+    },
+    {
+      "id": "c-mcr",
+      "kind": "official-result-sequence",
+      "source": "https://c-mcr.github.io/C-MCR/",
+      "images": [
+        "https://c-mcr.github.io/C-MCR/a2i/images/audio1_ours0.jpg",
+        "https://c-mcr.github.io/C-MCR/a2i/images/audio1_ours1.jpg",
+        "https://c-mcr.github.io/C-MCR/a2i/images/audio1_ours2.jpg"
+      ],
+      "note": "Fireworks audio query, top three official retrieved images. GIF has no audio."
+    },
+    {
+      "id": "worddiffuser",
+      "kind": "paper-result-sequence",
+      "source": "img/pub3.jpg",
+      "paper": "files/WordDiffuser.pdf",
+      "note": "Three published stages; transitions are a presentation, not intermediate diffusion samples."
+    }
+  ]
+}
