@@ -1,653 +1,257 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Jiageng Liu">
+  <meta name="description" content="Jiageng Liu is a Ph.D. student at UCLA studying spatial intelligence, embodied agents, and 3D world generation and editing.">
+  <meta name="theme-color" content="#93c6e8">
+  <title>Jiageng Liu | Spatial Intelligence &amp; Embodied AI</title>
+  <link rel="icon" href="img/ucla-favicon.ico" type="image/x-icon">
+  <link rel="preload" href="fonts/nunito-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="masthead">
+  <nav class="top-nav" aria-label="Main navigation">
+    <a class="home-link" href="#about">Homepage</a>
+    <div class="nav-links"><a href="#research">Research</a><a href="#news">News</a><a href="#experience">Experience</a><a href="#education">Education</a></div>
+  </nav>
+</header>
+<div class="site-layout">
+  <aside class="sidebar" aria-label="Profile">
+    <a class="portrait-link" href="img/half-body.jpg"><img class="portrait" src="img/half-body.jpg" width="175" height="175" alt="Jiageng Liu at his Zhejiang University graduation"></a>
+    <div class="profile-info">
+      <h1>Jiageng Liu <span lang="zh">刘家耕</span></h1>
+      <p class="role">Ph.D. Student<br><a href="https://www.ucla.edu/">UCLA</a> · <a href="https://mobility-lab.seas.ucla.edu/">Mobility Lab</a></p>
+      <p class="location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg> Los Angeles, CA</p>
+      <ul class="profile-links">
+        <li><a href="mailto:jiagengliu02@g.ucla.edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>Email</span></a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&amp;user=h9oPTX8AAAAJ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5-10-5Zm4 2v6c4 3 8 3 12 0v-6M22 9v8"/></svg><span>Google Scholar</span></a></li>
+        <li><a href="https://github.com/jiagengliu02"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-4a3.5 3.5 0 0 0-1-2.7c3.3-.4 6.8-1.6 6.8-7A5.5 5.5 0 0 0 20.3 4a5 5 0 0 0-.1-4s-1.2-.4-4.2 1.6a14 14 0 0 0-8 0C5-.4 3.8 0 3.8 0a5 5 0 0 0-.1 4A5.5 5.5 0 0 0 2.2 8.3c0 5.4 3.5 6.6 6.8 7A3.5 3.5 0 0 0 8 18v4" transform="translate(2 2) scale(.83)"/></svg><span>GitHub</span></a></li>
+        <li><a href="https://www.linkedin.com/in/jiageng-liu-07a7b1326"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4"/></svg><span>LinkedIn</span></a></li>
+        <li><a href="files/cv_2025.12.15.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg><span>Curriculum Vitae</span></a></li>
+      </ul>
+      <nav class="research-nav" aria-label="Research directions">
+        <p>Research directions</p>
+        <a href="#spatial-intelligence">Spatial Intelligence<br>&amp; Embodied Agents <span aria-hidden="true">↗</span></a>
+        <a href="#world-generation">3D World Generation<br>&amp; Editing <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </aside>
+  <main id="main">
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading"><span aria-hidden="true">💬</span> About Me</h2>
+      <p>I am a Ph.D. student in the <a href="https://mobility-lab.seas.ucla.edu/">UCLA Mobility Lab</a> at the <a href="https://www.ucla.edu/">University of California, Los Angeles</a>, advised by <a href="https://samueli.ucla.edu/people/jiaqi-ma/">Prof. Jiaqi Ma</a>.</p>
+      <p>Previously, I received my M.S. in Computer Science from <a href="https://www.umass.edu/">UMass Amherst</a> and worked closely with <a href="https://faculty.ucmerced.edu/mhyang/">Prof. Ming-Hsuan Yang</a> at UC Merced. I received my B.S. in Artificial Intelligence from the <a href="http://ckc.zju.edu.cn/ckcen/">Chu Kochen Honors College</a> and <a href="http://www.cs.zju.edu.cn/turingclass_en/">Turing Class</a> at <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>, advised by <a href="https://person.zju.edu.cn/zhaozhou">Prof. Zhou Zhao</a>.</p>
+    </section>
 
-    <title>Jiageng Liu</title>
+    <section id="research" aria-labelledby="research-heading">
+      <div class="section-heading"><h2 id="research-heading"><span aria-hidden="true">🔬</span> Research</h2><button type="button" id="animation-toggle" hidden>Pause animations</button></div>
+      <p>My research focuses on <strong>spatial intelligence for embodied AI</strong>. I study how agents understand and act in 3D environments from incomplete observations, and how we can efficiently construct and edit the worlds they inhabit. My work follows two connected directions:</p>
+      <ol class="research-overview">
+        <li><a href="#spatial-intelligence">Spatial Intelligence &amp; Embodied Agents</a><span> — reasoning with imagination, memory, active perception, and feedback.</span></li>
+        <li><a href="#world-generation">3D World Generation &amp; Editing</a><span> — building rich, controllable, and spatially consistent scenes.</span></li>
+      </ol>
+      <p class="publication-note">Selected and related publications below. * denotes equal contribution unless otherwise noted in the paper.</p>
 
-    <meta name="author" content="Jiageng Liu">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="img/ucla-favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
-  </head>
+      <section class="research-group" id="spatial-intelligence" aria-labelledby="spatial-heading">
+        <div class="direction-heading"><span class="direction-number" aria-hidden="true">01</span><h3 id="spatial-heading">Spatial Intelligence &amp; Embodied Agents</h3></div>
+        <p class="direction-description">From imagining unseen views and maintaining spatial memory to actively gathering evidence and recovering from execution errors.</p>
+        <article class="publication" id="paper-autoagent0">
+  <a class="paper-visual" href="https://jiagengliu02.github.io/AutoAgent0/" aria-label="AutoAgent0: An Agentic Runtime for Safe Closed-Loop Driving"><picture class="project-preview">
+<source media="(prefers-reduced-motion: reduce)" srcset="img/autoagent0.png"/>
+<img alt="AutoAgent0: An Agentic Runtime for Safe Closed-Loop Driving — official demo" data-animation="img/gifs/autoagent0.gif" data-still="img/autoagent0.png" decoding="async" height="155" loading="lazy" src="img/gifs/autoagent0.gif" title="Official demo" width="320"/>
+</picture></a>
+  <div class="paper-content">
+    <h4><a href="https://jiagengliu02.github.io/AutoAgent0/">AutoAgent0: An Agentic Runtime for Safe Closed-Loop Driving</a></h4>
+    <p class="paper-authors"><strong class="highlight">Jiageng Liu</strong>, Seth Z. Zhao*, Zewei Zhou*, Alejandro Huerta, Aidan Bayer-Calvert, Yuxin Bao, Haotian Lin, Robert Spataru, Zijun Cui, Yining Hong, Bolei Zhou, Jiaqi Ma</p>
+    <p class="paper-venue">Preprint, 2026</p>
+    <p class="paper-description">Runtime supervision, trajectory checks, and feedback-driven recovery for closed-loop driving.</p>
+    <div class="paper-links" aria-label="Resources for autoagent0"><a href="https://arxiv.org/pdf/2610.18866">Paper</a> <a href="https://jiagengliu02.github.io/AutoAgent0/">Project</a> <a href="files/autoagent0.txt">BibTeX</a></div>
+  </div>
+</article><article class="publication" id="paper-esi-bench">
+  <a class="paper-visual" href="https://esi-bench.github.io/" aria-label="ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop"><picture class="project-preview">
+<source media="(prefers-reduced-motion: reduce)" srcset="img/esi-bench.png"/>
+<img alt="ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop — official demo" data-animation="img/gifs/esi-bench.gif" data-still="img/esi-bench.png" decoding="async" height="180" loading="lazy" src="img/gifs/esi-bench.gif" title="Official demo" width="320"/>
+</picture></a>
+  <div class="paper-content">
+    <h4><a href="https://esi-bench.github.io/">ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop</a></h4>
+    <p class="paper-authors">Yining Hong*, <strong class="highlight">Jiageng Liu*</strong>, Han Yin, Manling Li, Leonidas Guibas, Fei-Fei Li, Jiajun Wu, Yejin Choi</p>
+    <p class="paper-venue">Preprint, 2026</p>
+    <p class="paper-description">Evaluating how agents use movement and manipulation to resolve spatial questions beyond passive observation.</p>
+    <div class="paper-links" aria-label="Resources for esi-bench"><a href="https://arxiv.org/pdf/2605.18746">Paper</a> <a href="https://esi-bench.github.io/">Project</a> <a href="https://github.com/ESI-Bench/ESI-Bench">Code</a> <a href="https://github.com/ESI-Bench/ESI-Bench">Dataset</a> <a href="files/esi-bench.txt">BibTeX</a></div>
+  </div>
+</article><article class="publication" id="paper-lsm-vlm">
+  <a class="paper-visual" href="files/lsm-vlm.pdf" aria-label="LSM-VLM: Long-Short Memory VLM with World-Model for 3D Spatial Reasoning"><picture class="project-preview">
+<source media="(prefers-reduced-motion: reduce)" srcset="img/lsm-vlm.png"/>
+<img alt="LSM-VLM: Long-Short Memory VLM with World-Model for 3D Spatial Reasoning — method schematic" data-animation="img/gifs/lsm-vlm.gif" data-still="img/lsm-vlm.png" decoding="async" height="165" loading="lazy" src="img/gifs/lsm-vlm.gif" title="Method schematic" width="320"/>
+</picture></a>
+  <div class="paper-content">
+    <h4><a href="files/lsm-vlm.pdf">LSM-VLM: Long-Short Memory VLM with World-Model for 3D Spatial Reasoning</a></h4>
+    <p class="paper-authors"><strong class="highlight">Jiageng Liu</strong>, Nirav Savaliya, Faizan Siddiqui, Sahith Reddy Chada, Enna Sachdeva</p>
+    <p class="paper-venue">Preprint, 2026</p>
+    <p class="paper-description">Combining structured spatial memory with imagined views to reason across viewpoints and over time.</p>
+    <div class="paper-links" aria-label="Resources for lsm-vlm"><a href="files/lsm-vlm.pdf">Paper</a> <a href="files/lsm-vlm.txt">BibTeX</a></div>
+  </div>
+</article><article class="publication" id="paper-mindjourney">
+  <a class="paper-visual" href="https://umass-embodied-agi.github.io/MindJourney/" aria-label="MindJourney: Test-Time Scaling with World Models for Spatial Reasoning"><picture class="project-preview">
+<source media="(prefers-reduced-motion: reduce)" srcset="img/TTS.png"/>
+<img alt="MindJourney: Test-Time Scaling with World Models for Spatial Reasoning — official method animation" data-animation="img/gifs/mindjourney.gif" data-still="img/TTS.png" decoding="async" height="126" loading="lazy" src="img/gifs/mindjourney.gif" title="Official method animation" width="320"/>
+</picture></a>
+  <div class="paper-content">
+    <h4><a href="https://umass-embodied-agi.github.io/MindJourney/">MindJourney: Test-Time Scaling with World Models for Spatial Reasoning</a></h4>
+    <p class="paper-authors">Yuncong Yang*, <strong class="highlight">Jiageng Liu*</strong>, Zheyuan Zhang, Siyuan Zhou, Reuben Tan, Jianwei Yang, Yilun Du, Chuang Gan</p>
+    <p class="paper-venue">NeurIPS 2025</p>
+    <p class="paper-description">Using controllable world models to explore new viewpoints and improve spatial reasoning at test time.</p>
+    <div class="paper-links" aria-label="Resources for mindjourney"><a href="https://arxiv.org/pdf/2507.12508">Paper</a> <a href="https://umass-embodied-agi.github.io/MindJourney/">Project</a> <a href="files/TestTimeScaling.txt">BibTeX</a></div>
+  </div>
+</article><article class="publication" id="paper-rila">
+  <a class="paper-visual" href="https://rila-savn.github.io/RILA/" aria-label="RILA: Reflective and Imaginative Language Agent for Zero-Shot Semantic Audio-Visual Navigation"><picture class="project-preview">
+<source media="(prefers-reduced-motion: reduce)" srcset="img/pub1.jpg"/>
+<img alt="RILA — official demo" data-animation="img/gifs/rila.gif" data-still="img/pub1.jpg" decoding="async" height="143" loading="lazy" src="img/gifs/rila.gif" title="Official demo" width="320"/>
+</picture></a>
+  <div class="paper-content">
+    <h4><a href="https://rila-savn.github.io/RILA/">RILA: Reflective and Imaginative Language Agent for Zero-Shot Semantic Audio-Visual Navigation</a></h4>
+    <p class="paper-authors">Zeyuan Yang*, <strong class="highlight">Jiageng Liu*</strong>, Peihao Chen, Anoop Cherian, Tim K. Marks, Jonathan Le Roux, Chuang Gan</p>
+    <p class="paper-venue">CVPR 2024</p>
+    <p class="paper-description">Reflecting on uncertain audio-visual cues and adapting exploration for zero-shot navigation.</p>
+    <div class="paper-links" aria-label="Resources for rila"><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_RILA_Reflective_and_Imaginative_Language_Agent_for_Zero-Shot_Semantic_Audio-Visual_CVPR_2024_paper.pdf">Paper</a> <a href="https://rila-savn.github.io/RILA/">Project</a> <a href="files/RILA.txt">BibTeX</a></div>
+  </div>
+</article>
+      </section>
+      <section class="research-group" id="world-generation" aria-labelledby="world-heading">
+        <div class="direction-heading"><span class="direction-number" aria-hidden="true">02</span><h3 id="world-heading">3D World Generation &amp; Editing</h3></div>
+        <p class="direction-description">Generating and editing coherent 3D scenes, and extending scene construction to interactive worlds with humans and robots.</p>
+        <article class="publication" id="paper-edit3r">
+  <a class="paper-visual" href="https://edit3r.github.io/edit3r/" aria-label="Edit3r: Instant 3D Scene Editing from Sparse Unposed Images"><picture class="project-preview">
+<source media="(prefers-reduced-motion: reduce)" srcset="img/edit3r.png"/>
+<img alt="Edit3r: Instant 3D Scene Editing from Sparse Unposed Images — official demo" data-animation="img/gifs/edit3r.gif" data-still="img/edit3r.png" decoding="async" height="159" loading="lazy" src="img/gifs/edit3r.gif" title="Official demo" width="320"/>
+</picture></a>
+  <div class="paper-content">
+    <h4><a href="https://edit3r.github.io/edit3r/">Edit3r: Instant 3D Scene Editing from Sparse Unposed Images</a></h4>
+    <p class="paper-authors"><strong class="highlight">Jiageng Liu*</strong>, Weijie Lyu*, Xueting Li, Yejie Guo, Ming-Hsuan Yang</p>
+    <p class="paper-venue oral">ECCV 2026 · Oral</p>
+    <p class="paper-description">Fast, instruction-driven 3D scene editing from sparse unposed images, with consistent novel views.</p>
+    <div class="paper-links" aria-label="Resources for edit3r"><a href="https://arxiv.org/pdf/2512.25071">Paper</a> <a href="https://edit3r.github.io/edit3r/">Project</a> <a href="files/Edit3r.txt">BibTeX</a></div>
+  </div>
+</article><article class="publication" id="paper-architect">
+  <a class="paper-visual" href="https://wangyian-me.github.io/Architect/" aria-label="ARCHITECT: Generating Vivid and Interactive 3D Scenes with Hierarchical 2D Inpainting"><picture class="project-preview">
+<source media="(prefers-reduced-motion: reduce)" srcset="img/architect.png"/>
+<img alt="ARCHITECT — official demo" data-animation="img/gifs/architect.gif" data-still="img/architect.png" decoding="async" height="320" loading="lazy" src="img/gifs/architect.gif" title="Official demo" width="320"/>
+</picture></a>
+  <div class="paper-content">
+    <h4><a href="https://wangyian-me.github.io/Architect/">ARCHITECT: Generating Vivid and Interactive 3D Scenes with Hierarchical 2D Inpainting</a></h4>
+    <p class="paper-authors">Yian Wang*, Xiaowen Qiu*, <strong class="highlight">Jiageng Liu*</strong>, Zhehuan Chen, Jiting Cai, Yufei Wang, Tsun-Hsuan Wang, Zhou Xian, Chuang Gan</p>
+    <p class="paper-venue">NeurIPS 2024</p>
+    <p class="paper-description">Turning 2D generative priors into rich, interactive 3D environments through hierarchical inpainting.</p>
+    <div class="paper-links" aria-label="Resources for architect"><a href="https://arxiv.org/pdf/2411.09823">Paper</a> <a href="https://wangyian-me.github.io/Architect/">Project</a> <a href="files/Architect.txt">BibTeX</a></div>
+  </div>
+</article><article class="publication" id="paper-virtual-community">
+  <a class="paper-visual" href="https://sites.google.com/view/virtual-community-simulation" aria-label="Virtual Community: An Open World for Humans, Robots, and Society"><picture class="project-preview">
+<source media="(prefers-reduced-motion: reduce)" srcset="img/Virtual_Community.jpg"/>
+<img alt="Virtual Community — official demo" data-animation="img/gifs/virtual-community.gif" data-still="img/Virtual_Community.jpg" decoding="async" height="153" loading="lazy" src="img/gifs/virtual-community.gif" title="Official demo" width="320"/>
+</picture></a>
+  <div class="paper-content">
+    <h4><a href="https://sites.google.com/view/virtual-community-simulation">Virtual Community: An Open World for Humans, Robots, and Society</a></h4>
+    <p class="paper-authors">Qinhong Zhou*, Hongxin Zhang, Xiangye Lin, Zheyuan Zhang, Yutian Chen, Wenjun Liu, Zunzhe Zhang, Sunli Chen, Lixing Fang, Qiushi Lyu, Xinyu Sun, Jincheng Yang, Zeyuan Wang, Bao Chi Dang, Zhehuan Chen, Daksha Ladia, Quang Vinh Dang, <strong class="highlight">Jiageng Liu</strong>, Chuang Gan</p>
+    <p class="paper-venue">ICLR 2026</p>
+    <p class="paper-description">Scaling scene construction to open worlds with humans, robots, and socially grounded agent communities.</p>
+    <div class="paper-links" aria-label="Resources for virtual-community"><a href="https://arxiv.org/pdf/2508.14893">Paper</a> <a href="https://sites.google.com/view/virtual-community-simulation">Project</a></div>
+  </div>
+</article>
+      </section>
+      <details class="other-publications" id="other-publications">
+        <summary>Other Publications <span>Multimodal learning, physical commonsense, and generative applications · 3 papers</span></summary>
+        <article class="publication" id="paper-av-phys-bench">
+  <a class="paper-visual" href="https://zijuncui.com/AV-Phys/" aria-label="Do Joint Audio-Video Generation Models Understand Physics?"><picture class="project-preview">
+<source media="(prefers-reduced-motion: reduce)" srcset="img/av-phys-bench.png"/>
+<img alt="Do Joint Audio-Video Generation Models Understand Physics? — official generated video · silent" data-animation="img/gifs/av-phys-bench.gif" data-still="img/av-phys-bench.png" decoding="async" height="180" loading="lazy" src="img/gifs/av-phys-bench.gif" title="Official generated video · silent" width="320"/>
+</picture></a>
+  <div class="paper-content">
+    <h4><a href="https://zijuncui.com/AV-Phys/">Do Joint Audio-Video Generation Models Understand Physics?</a></h4>
+    <p class="paper-authors">Zijun Cui*, Xiulong Liu*, Hao Fang*, Mingwei Xu, <strong class="highlight">Jiageng Liu</strong>, Zexin Xu, Weiguo Pian, Shijian Deng, Feiyu Du, Chenming Ge, Yapeng Tian</p>
+    <p class="paper-venue">Preprint, 2026</p>
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-      <tbody>
-        <tr style="padding:0px">
-          <td style="padding:0px">
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr style="padding:0px">
-                  <td style="padding:2.5%;width:63%;vertical-align:middle">
-                    <!-- name -->
-                    <p class="name" style="text-align: center;">
-                      <strong>Jiageng Liu <font size=4>(刘家耕)</font></strong>
+    <div class="paper-links" aria-label="Resources for av-phys-bench"><a href="https://arxiv.org/pdf/2605.07061">Paper</a> <a href="https://zijuncui.com/AV-Phys/">Project</a> <a href="https://github.com/ZijunCui02/AV-Phys-Bench">Code</a> <a href="https://huggingface.co/datasets/ZijunCui/AV-Phys-Bench">Dataset</a> <a href="files/av-phys-bench.txt">BibTeX</a></div>
+  </div>
+</article><article class="publication" id="paper-c-mcr">
+  <a class="paper-visual" href="https://c-mcr.github.io/C-MCR/" aria-label="Connecting Multi-modal Contrastive Representations"><picture class="project-preview">
+<source media="(prefers-reduced-motion: reduce)" srcset="img/pub2.jpg"/>
+<img alt="C-MCR — official retrieval results" data-animation="img/gifs/c-mcr.gif" data-still="img/pub2.jpg" decoding="async" height="107" loading="lazy" src="img/gifs/c-mcr.gif" title="Official retrieval results" width="320"/>
+</picture></a>
+  <div class="paper-content">
+    <h4><a href="https://c-mcr.github.io/C-MCR/">Connecting Multi-modal Contrastive Representations</a></h4>
+    <p class="paper-authors">Zehan Wang, Yang Zhao, Xize Cheng, Haifeng Huang, <strong class="highlight">Jiageng Liu</strong>, Li Tang, Linjun Li, Yongqi Wang, Aoxiong Yin, Ziang Zhang, Zhou Zhao</p>
+    <p class="paper-venue">NeurIPS 2023</p>
+
+    <div class="paper-links" aria-label="Resources for c-mcr"><a href="https://arxiv.org/pdf/2305.14381">Paper</a> <a href="https://c-mcr.github.io/C-MCR/">Project</a> <a href="files/C-MCR.txt">BibTeX</a></div>
+  </div>
+</article><article class="publication" id="paper-worddiffuser">
+  <a class="paper-visual" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10494249" aria-label="WordDiffuser: Helping Beginners Cognize and Memorize Glyph-semantic Pairs Using Diffusion"><picture class="project-preview">
+<source media="(prefers-reduced-motion: reduce)" srcset="img/pub3.jpg"/>
+<img alt="WordDiffuser — paper result sequence" data-animation="img/gifs/worddiffuser.gif" data-still="img/pub3.jpg" decoding="async" height="320" loading="lazy" src="img/gifs/worddiffuser.gif" title="Paper result sequence" width="320"/>
+</picture></a>
+  <div class="paper-content">
+    <h4><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10494249">WordDiffuser: Helping Beginners Cognize and Memorize Glyph-semantic Pairs Using Diffusion</a></h4>
+    <p class="paper-authors">Yuhang Xu, Wanxu Xia, Yipeng Chen, <strong class="highlight">Jiageng Liu</strong>, Weitao You</p>
+    <p class="paper-venue">ISCID 2023</p>
+
+    <div class="paper-links" aria-label="Resources for worddiffuser"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10494249">Paper</a> <a href="files/WordDiffuser.txt">BibTeX</a></div>
+  </div>
+</article>
+      </details>
+    </section>
+
+    <section id="news" aria-labelledby="news-heading">
+      <h2 id="news-heading"><span aria-hidden="true">📣</span> News</h2>
+      <ul class="news-list"><li><time datetime="2026-06">2026.06</time><span>One paper was accepted as an oral paper at ECCV 2026.</span></li>
+<li><time datetime="2026-06">2026.06</time><span>Started my Ph.D. in the UCLA Mobility Lab.</span></li>
+<li><time datetime="2026-01">2026.01</time><span>One paper was accepted to ICLR 2026.</span></li>
+<li><time datetime="2025-12">2025.12</time><span>Started a research internship at Honda Research Institute USA.</span></li>
+<li><time datetime="2025-09">2025.09</time><span>One paper was accepted to NeurIPS 2025.</span></li></ul>
+      <details class="older-news"><summary>Earlier news</summary><ul class="news-list"><li><time datetime="2024-10">2024.10</time><span>One paper was accepted to NeurIPS 2024.</span></li>
+<li><time datetime="2024-09">2024.09</time><span>Started my M.S. in CICS at UMass Amherst.</span></li>
+<li><time datetime="2024-03">2024.03</time><span>One paper was accepted to CVPR 2024.</span></li>
+<li><time datetime="2023-12">2023.12</time><span>Received the National Scholarship in China.</span></li>
+<li><time datetime="2023-09">2023.09</time><span>One paper was accepted to NeurIPS 2023.</span></li>
+<li><time datetime="2023-06">2023.06</time><span>Joined MIT-IBM Watson AI Lab as an intern.</span></li>
+<li><time datetime="2022-06">2022.06</time><span>I had the honor of starring in <a href="https://www.bilibili.com/video/BV1k3411g7J6/?spm_id_from=333.337.search-card.all.click"> the promotional video of Zhejiang University</a>.</span></li></ul></details>
+    </section>
+    <section id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading"><span aria-hidden="true">💻</span> Experience</h2>
+      <ul class="timeline"><li><span class="timeline-date">2025.12 – Present</span><div><h3>Research Intern, <a href="https://usa.honda-ri.com/">Honda Research Institute USA</a></h3><p>Multi-modal scene representation and navigation in Habitat; Advisor: Nirav Savaliya.</p></div></li>
+<li><span class="timeline-date">2025.06 – 2025.11</span><div><h3>Research Leader, <a href="https://vllab.ucmerced.edu/">Vision and Learning Lab</a>, <a href="https://www.ucmerced.edu/">UC Merced</a></h3><p>Led <em>Edit3r</em> on instant 3D scene editing from sparse, unposed images; Advisor: Ming-Hsuan Yang.</p></div></li>
+<li><span class="timeline-date">2025.02 – 2025.06</span><div><h3>Research Leader, Microsoft Research</h3><p>MindJourney: Test-time scaling with controllable world models for 3D spatial reasoning; Advisor: Jianwei Yang.</p></div></li>
+<li><span class="timeline-date">2023.11 – 2024.06</span><div><h3>Research Leader, MIT-IBM Watson AI Lab</h3><p>ARCHITECT and RILA for 3D scene generation and audio-visual navigation;</p></div></li></ul>
+    </section>
+    <section id="education" aria-labelledby="education-heading">
+      <h2 id="education-heading"><span aria-hidden="true">🎓</span> Education</h2>
+      <ul class="timeline"><li><span class="timeline-date">2026.05 – Present</span><div><h3>Ph.D. in Civil and Environmental Engineering, UCLA</h3><p>Mobility Lab; advised by Jiaqi Ma.</p></div></li>
+<li><span class="timeline-date">2024.09 – 2025.12</span><div><h3>M.S. in Computer Science, University of Massachusetts Amherst</h3><p>College of Information and Computer Sciences (GPA: 4.00/4.00).</p></div></li>
+<li><span class="timeline-date">2020.09 – 2024.07</span><div><h3>B.S. in Artificial Intelligence, Zhejiang University</h3><p>Turing Class, Chu Kochen Honors College; GPA: 3.75/4.00 (Major GPA 3.96/4.00).</p></div></li></ul>
+    </section>
+    <section id="service" aria-labelledby="service-heading">
+      <h2 id="service-heading"><span aria-hidden="true">🤝</span> Academic Service</h2>
+      <p>
+<strong>Conference Reviewer:</strong> NeurIPS 2025, NeurIPS 2026, CVPR 2026
+                      <br/>
+<strong>Journal Reviewer:</strong> IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), IEEE Transactions on Automation Science and Engineering (TASE), IEEE Open Journal of Intelligent Transportation Systems (OJ-ITS)
                     </p>
-
-                    <!-- intro -->
-                    <p>
-                      I am a Ph.D. student in the <a href="https://mobility-lab.seas.ucla.edu/">UCLA Mobility Lab</a> at
-                      <a href="https://www.ucla.edu/">University of California, Los Angeles (UCLA)</a>, advised by <a href="https://samueli.ucla.edu/people/jiaqi-ma/">Prof. Jiaqi Ma</a>.
-                    </p>
-                    <p>
-                      Previously, I received my M.S. in Computer Science from <a href="https://www.umass.edu/">University of Massachusetts Amherst</a>, where I worked closely with
-                      <a href="https://faculty.ucmerced.edu/mhyang/">Prof. Ming-Hsuan Yang</a> at <a href="https://www.ucmerced.edu/">UC Merced</a>.
-                    </p>
-                    <p>
-                      Before that, I received my Bachelor's degree in Artificial Intelligence from the <a href="http://www.cs.zju.edu.cn/turingclass_en/">Turing Class</a>,
-                      <a href="http://ckc.zju.edu.cn/ckcen/">Chu Kochen Honors College</a> &
-                      <a href="http://www.en.cs.zju.edu.cn/">College of Computer Science and Technology</a>,
-                      <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>, advised by
-                      <a href="https://person.zju.edu.cn/zhaozhou">Prof. Zhou Zhao</a>.
-                    </p>
-                    <p>
-                      My research interests lie in <strong>Embodied AI and Computer Vision</strong>. 
-                    </p>
-                    
-                    <p style="text-align:center">
-                      <a href="mailto:jiagengliu02@g.ucla.edu">Email: jiagengliu02@g.ucla.edu</a> <br>
-                      <a href="files/cv_2025.12.15.pdf">CV</a> &nbsp;/&nbsp; 
-                      <a href="https://scholar.google.com/citations?hl=en&user=h9oPTX8AAAAJ">Google Scholar</a> &nbsp;/&nbsp; 
-                      <a href="https://github.com/jiagengliu02">Github</a> &nbsp;/&nbsp;
-                      <a href="https://www.linkedin.com/in/jiageng-liu-07a7b1326">Linkedin</a>
-                    </p>
-                  </td>
-
-                  <td style="padding:2.5%;width:30%;max-width:30%">
-                    <a href="img/half-body.jpg">
-                      <img style="width:100%;max-width:100%;object-fit: cover;" 
-                           alt="profile photo" 
-                           src="img/half-body.jpg" 
-                           class="hoverZoomLink">
-                    </a>
-                    <figcaption>
-                        The photo was taken in ZJU for my graduation.
-                    </figcaption>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          
-            <!-- News -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td style="padding:20px;width:100%;vertical-align:middle">
-                    <h2>News</h2>
-                    <ul>
-                      <li> [2026.06] One paper was accepted as an oral paper at ECCV 2026. </li>
-                      <li> [2026.06] Started my Ph.D. in the UCLA Mobility Lab. </li>
-                      <li> [2026.01] One paper was accepted to ICLR 2026. </li>
-                      <li> [2025.12] Started a research internship at Honda Research Institute USA. </li>
-                      <li> [2025.09] One paper was accepted to NeurIPS 2025. </li>
-                    </ul>
-                    <!-- hide old news -->
-                    <details>
-                      <summary>Show/Hide old news</summary>
-                      <ul>
-                        <li> [2024.10] One paper was accepted to NeurIPS 2024. </li>
-                        <li> [2024.09] Started my M.S. in CICS at UMass Amherst. </li>
-                        <li> [2024.03] One paper was accepted to CVPR 2024. </li>
-                        <li> [2023.12] Received the National Scholarship in China. </li>
-                        <li> [2023.09] One paper was accepted to NeurIPS 2023.</li>
-                        <li> [2023.06] Joined MIT-IBM Watson AI Lab as an intern. </li>
-                        <li> [2022.06] I had the honor of starring in <a href="https://www.bilibili.com/video/BV1k3411g7J6/?spm_id_from=333.337.search-card.all.click"> the promotional video of Zhejiang University</a>. </li>
-                      </ul>
-                    </details>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <!-- Research -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td style="padding:20px;width:100%;vertical-align:middle">
-                    <h2>Research</h2>
-                    <p>
-                      My research focuses on <span class="highlight">embodied AI</span>, <span class="highlight">spatial intelligence</span>, and <span class="highlight">multimodal world modeling</span>. I study how agents perceive, reason, and act in complex 3D environments, with interests in vision-language models, generative simulation, 3D scene understanding and editing, and test-time reasoning. More broadly, I aim to build interactive systems that tightly couple perception, memory, and action.
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <!-- Availability -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td style="padding:20px;width:100%;vertical-align:middle">
-                    <h2>Availability</h2>
-                    <p>Feel free to reach out if you'd like to schedule a meeting.</p>
-                    <iframe src="https://calendar.google.com/calendar/embed?src=jiagengliu02%40g.ucla.edu&ctz=America%2FLos_Angeles&mode=WEEK&hl=en" style="border: 0" width="760" height="500" frameborder="0" scrolling="no"></iframe>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="animation-controls">
-              <button type="button" id="animation-toggle" hidden>Pause animations</button>
-            </div>
-            <!-- List of publications -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <!-- Paper: AutoAgent0 (Preprint, 2026) -->
-                <tr style="background-color:#ffffd0;">
-                  <!-- paper figure -->
-                  <td style="padding:20px;width:25%;vertical-align:middle">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                      <picture class="project-preview">
-                        <source media="(prefers-reduced-motion: reduce)" srcset="img/autoagent0.png">
-                        <img src="img/gifs/autoagent0.gif" data-animation="img/gifs/autoagent0.gif" data-still="img/autoagent0.png"
-                             alt="AutoAgent0: An Agentic Runtime for Safe Closed-Loop Driving — official demo" title="Official demo"
-                             width="320" height="155" loading="lazy" decoding="async"
-                             style="width: 200px; height: auto;">
-                      </picture>
-                    </div>
-                  </td>
-                  <!-- paper info -->
-                  <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                      AutoAgent0: An Agentic Runtime for Safe Closed-Loop Driving
-                    </span>
-                    <br>
-                    <b>Preprint, 2026</b>
-                    <br>
-                    <em><strong class="highlight">Jiageng Liu</strong>, Seth Z. Zhao*, Zewei Zhou*, Alejandro Huerta, Aidan Bayer-Calvert, Yuxin Bao, Haotian Lin, Robert Spataru, Zijun Cui, Yining Hong, Bolei Zhou, Jiaqi Ma</em>
-                    <p></p>
-                    <p><a href="https://arxiv.org/pdf/2610.18866">[pdf]</a>
-                      <a href="https://jiagengliu02.github.io/AutoAgent0/">[web]</a>
-                      <a href="files/autoagent0.txt">[bibtex]</a></p>
-                  </td>
-                </tr>
-
-                <tr style="background-color:#e8f4ff;">
-                  <!-- paper figure -->
-                  <td style="padding:20px;width:25%;vertical-align:middle">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                      <picture class="project-preview">
-                        <source media="(prefers-reduced-motion: reduce)" srcset="img/esi-bench.png">
-                        <img src="img/gifs/esi-bench.gif" data-animation="img/gifs/esi-bench.gif" data-still="img/esi-bench.png"
-                             alt="ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop — official demo" title="Official demo"
-                             width="320" height="180" loading="lazy" decoding="async"
-                             style="width: 200px; height: auto;">
-                      </picture>
-                    </div>
-                  </td>
-                  <!-- paper info -->
-                  <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                      ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop
-                    </span>
-                    <br>
-                    <b>Preprint, 2026</b>
-                    <br>
-                    <em>Yining Hong*, <strong class="highlight">Jiageng Liu*</strong>, Han Yin, Manling Li, Leonidas Guibas, Fei-Fei Li, Jiajun Wu, Yejin Choi</em>
-                    <p></p>
-                    <p><a href="https://arxiv.org/pdf/2605.18746">[pdf]</a>
-                      <a href="https://esi-bench.github.io/">[web]</a>
-                      <a href="https://github.com/ESI-Bench/ESI-Bench">[code]</a>
-                      <a href="https://github.com/ESI-Bench/ESI-Bench">[dataset]</a>
-                      <a href="files/esi-bench.txt">[bibtex]</a></p>
-                  </td>
-                </tr>
-
-                <tr style="background-color:#ffffff;">
-                  <!-- paper figure -->
-                  <td style="padding:20px;width:25%;vertical-align:middle">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                      <picture class="project-preview">
-                        <source media="(prefers-reduced-motion: reduce)" srcset="img/av-phys-bench.png">
-                        <img src="img/gifs/av-phys-bench.gif" data-animation="img/gifs/av-phys-bench.gif" data-still="img/av-phys-bench.png"
-                             alt="Do Joint Audio-Video Generation Models Understand Physics? — official generated video · silent" title="Official generated video · silent"
-                             width="320" height="180" loading="lazy" decoding="async"
-                             style="width: 200px; height: auto;">
-                      </picture>
-                    </div>
-                  </td>
-                  <!-- paper info -->
-                  <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                      Do Joint Audio-Video Generation Models Understand Physics?
-                    </span>
-                    <br>
-                    <b>Preprint, 2026</b>
-                    <br>
-                    <em>Zijun Cui*, Xiulong Liu*, Hao Fang*, Mingwei Xu, <strong class="highlight">Jiageng Liu</strong>, Zexin Xu, Weiguo Pian, Shijian Deng, Feiyu Du, Chenming Ge, Yapeng Tian</em>
-                    <p></p>
-                    <p><a href="https://arxiv.org/pdf/2605.07061">[pdf]</a>
-                      <a href="https://zijuncui.com/AV-Phys/">[web]</a>
-                      <a href="https://github.com/ZijunCui02/AV-Phys-Bench">[code]</a>
-                      <a href="https://huggingface.co/datasets/ZijunCui/AV-Phys-Bench">[dataset]</a>
-                      <a href="files/av-phys-bench.txt">[bibtex]</a></p>
-                  </td>
-                </tr>
-
-                <tr style="background-color:#ffffd0;">
-                  <!-- paper figure -->
-                  <td style="padding:20px;width:25%;vertical-align:middle">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                      <picture class="project-preview">
-                        <source media="(prefers-reduced-motion: reduce)" srcset="img/lsm-vlm.png">
-                        <img src="img/gifs/lsm-vlm.gif" data-animation="img/gifs/lsm-vlm.gif" data-still="img/lsm-vlm.png"
-                             alt="LSM-VLM: Long-Short Memory VLM with World-Model for 3D Spatial Reasoning — method schematic" title="Method schematic"
-                             width="320" height="165" loading="lazy" decoding="async"
-                             style="width: 200px; height: auto;">
-                      </picture>
-                    </div>
-                  </td>
-                  <!-- paper info -->
-                  <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                      LSM-VLM: Long-Short Memory VLM with World-Model for 3D Spatial Reasoning
-                    </span>
-                    <br>
-                    <b>Preprint, 2026</b>
-                    <br>
-                    <em><strong class="highlight">Jiageng Liu</strong>, Nirav Savaliya, Faizan Siddiqui, Sahith Reddy Chada, Enna Sachdeva</em>
-                    <p></p>
-                    <p><a href="files/lsm-vlm.pdf">[pdf]</a>
-                      <a href="files/lsm-vlm.txt">[bibtex]</a></p>
-                  </td>
-                </tr>
-
-                <tr style="background-color:#ffffd0;">
-                  <!-- paper figure -->
-                  <td style="padding:20px;width:25%;vertical-align:middle">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                      <picture class="project-preview">
-                        <source media="(prefers-reduced-motion: reduce)" srcset="img/edit3r.png">
-                        <img src="img/gifs/edit3r.gif" data-animation="img/gifs/edit3r.gif" data-still="img/edit3r.png"
-                             alt="Edit3r: Instant 3D Scene Editing from Sparse Unposed Images — official demo" title="Official demo"
-                             width="320" height="159" loading="lazy" decoding="async"
-                             style="width: 200px; height: auto;">
-                      </picture>
-                    </div>
-                  </td>
-                  <!-- paper info -->
-                  <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                      Edit3r: Instant 3D Scene Editing from Sparse Unposed Images
-                    </span>
-                    <br>
-                    <b>ECCV 2026 (Oral)</b>
-                    <br>
-                    <em><strong class="highlight">Jiageng Liu*</strong>, Weijie Lyu*, Xueting Li, Yejie Guo, Ming-Hsuan Yang</em>
-                    <p></p>
-                    <p><a href="https://arxiv.org/pdf/2512.25071">[pdf]</a>
-                      <a href="https://edit3r.github.io/edit3r/">[web]</a> 
-                      <a href="files/Edit3r.txt">[bibtex]</a></p>
-                  </td>
-                </tr>
-
-                <tr style="background-color:#e8f4ff;">
-                    <!-- paper figure -->
-                    <td style="padding:20px;width:25%;vertical-align:middle">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <picture class="project-preview">
-                        <source media="(prefers-reduced-motion: reduce)" srcset="img/Virtual_Community.jpg">
-                        <img src="img/gifs/virtual-community.gif" data-animation="img/gifs/virtual-community.gif" data-still="img/Virtual_Community.jpg"
-                             alt="Virtual Community — official demo" title="Official demo"
-                             width="320" height="153" loading="lazy" decoding="async"
-                             style="width: 200px; height: auto;">
-                      </picture>
-                    </div>
-                    </td>
-                    <!-- paper info -->
-                    <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                        Virtual Community: An Open World for Humans, Robots, and Society
-                    </span>
-                    <br>
-                    <b>ICLR 2026 (Poster)</b>
-                    <br>
-                    <em>Qinhong Zhou*, Hongxin Zhang, Xiangye Lin, Zheyuan Zhang, Yutian Chen, Wenjun Liu, Zunzhe Zhang, Sunli Chen, Lixing Fang, Qiushi Lyu, Xinyu Sun, Jincheng Yang, Zeyuan Wang, Bao Chi Dang, Zhehuan Chen, Daksha Ladia, Quang Vinh Dang, <strong class="highlight">Jiageng Liu</strong>, Chuang Gan</em>
-                    <p></p>
-                    <p>
-                        <a href="https://arxiv.org/pdf/2508.14893">[pdf]</a>
-                        <a href="https://sites.google.com/view/virtual-community-simulation">[web]</a>
-                    </p>
-                    </td>
-                </tr>
-
-                <!-- Paper: TTS (NeurIPS 2025) -->
-                <tr style="background-color:#ffffd0;">
-                  <!-- paper figure -->
-                  <td style="padding:20px;width:25%;vertical-align:middle">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                      <picture class="project-preview">
-                        <source media="(prefers-reduced-motion: reduce)" srcset="img/TTS.png">
-                        <img src="img/gifs/mindjourney.gif" data-animation="img/gifs/mindjourney.gif" data-still="img/TTS.png"
-                             alt="MindJourney: Test-Time Scaling with World Models for Spatial Reasoning — official method animation" title="Official method animation"
-                             width="320" height="126" loading="lazy" decoding="async"
-                             style="width: 200px; height: auto;">
-                      </picture>
-                    </div>
-                  </td>
-                  <!-- paper info -->
-                    <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                      MindJourney: Test-Time Scaling with World Models for Spatial Reasoning
-                    </span>
-                    <br>
-                    <b>NeurIPS 2025 (Poster)</b>
-                    <br>
-                    <em>Yuncong Yang*, <strong class="highlight">Jiageng Liu*</strong>, Zheyuan Zhang, Siyuan Zhou, Reuben Tan, Jianwei Yang, Yilun Du, Chuang Gan</em>
-                    <p></p>
-                    <p>
-                      <a href="https://arxiv.org/pdf/2507.12508">[pdf]</a>
-                      <a href="https://umass-embodied-agi.github.io/MindJourney/">[web]</a> 
-                      <a href="files/TestTimeScaling.txt">[bibtex]</a>
-                    </p>
-                  </td>
-                </tr>
-
-                <!-- Paper: ARCHITECT (NeurIPS 2024) -->
-                <tr style="background-color:#ffffd0;">
-                  <!-- paper figure -->
-                  <td style="padding:20px;width:25%;vertical-align:middle">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                      <picture class="project-preview">
-                        <source media="(prefers-reduced-motion: reduce)" srcset="img/architect.png">
-                        <img src="img/gifs/architect.gif" data-animation="img/gifs/architect.gif" data-still="img/architect.png"
-                             alt="ARCHITECT — official demo" title="Official demo"
-                             width="320" height="320" loading="lazy" decoding="async"
-                             style="width: 200px; height: auto;">
-                      </picture>
-                    </div>
-                  </td>
-                  <!-- paper info -->
-                  <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                      ARCHITECT: Generating Vivid and Interactive 3D Scenes with Hierarchical 2D Inpainting
-                    </span>
-                    <br>
-                    <b>NeurIPS 2024 (Poster)</b>
-                    <br>
-                    <em>Yian Wang*, Xiaowen Qiu*, <strong class="highlight">Jiageng Liu*</strong>, Zhehuan Chen, Jiting Cai, Yufei Wang, Tsun-Hsuan Wang, Zhou Xian, Chuang Gan</em>
-                    <p></p>
-                    <p>
-                      <a href="https://arxiv.org/pdf/2411.09823">[pdf]</a>
-                      <a href="https://wangyian-me.github.io/Architect/">[web]</a> 
-                      <a href="files/Architect.txt">[bibtex]</a>
-                    </p>
-                  </td>
-                </tr>
-
-                <!-- Paper: RILA (CVPR 2024) -->
-                <tr style="background-color:#ffffd0;">
-                  <!-- paper figure -->
-                  <td style="padding:20px;width:25%;vertical-align:middle">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                      <picture class="project-preview">
-                        <source media="(prefers-reduced-motion: reduce)" srcset="img/pub1.jpg">
-                        <img src="img/gifs/rila.gif" data-animation="img/gifs/rila.gif" data-still="img/pub1.jpg"
-                             alt="RILA — official demo" title="Official demo"
-                             width="320" height="143" loading="lazy" decoding="async"
-                             style="width: 200px; height: auto;">
-                      </picture>
-                    </div>
-                  </td>
-                  <!-- paper info -->
-                  <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                      RILA: Reflective and Imaginative Language Agent for Zero-Shot Semantic Audio-Visual Navigation
-                    </span>
-                    <br>
-                    <b>CVPR 2024 (Poster)</b>
-                    <br>
-                    <em>Zeyuan Yang*, <strong class="highlight">Jiageng Liu*</strong>, Peihao Chen, Anoop Cherian, Tim K. Marks, Jonathan Le Roux, Chuang Gan</em>
-                    <p></p>
-                    <p>
-                      <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_RILA_Reflective_and_Imaginative_Language_Agent_for_Zero-Shot_Semantic_Audio-Visual_CVPR_2024_paper.pdf">[pdf]</a>
-                      <a href="https://rila-savn.github.io/RILA/">[web]</a> 
-                      <a href="files/RILA.txt">[bibtex]</a>
-                    </p>
-                  </td>
-                </tr>
-
-                <!-- Paper: C-MCR (NeurIPS 2023) -->
-                <tr style="background-color:#ffffff;">
-                    <!-- paper figure -->
-                    <td style="padding:20px;width:25%;vertical-align:middle">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <picture class="project-preview">
-                        <source media="(prefers-reduced-motion: reduce)" srcset="img/pub2.jpg">
-                        <img src="img/gifs/c-mcr.gif" data-animation="img/gifs/c-mcr.gif" data-still="img/pub2.jpg"
-                             alt="C-MCR — official retrieval results" title="Official retrieval results"
-                             width="320" height="107" loading="lazy" decoding="async"
-                             style="width: 200px; height: auto;">
-                      </picture>
-                    </div>
-                    </td>
-                    <!-- paper info -->
-                    <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                        Connecting Multi-modal Contrastive Representations
-                    </span>
-                    <br>
-                    <b>NeurIPS 2023 (Poster)</b>
-                    <br>
-                    <em>Zehan Wang, Yang Zhao, Xize Cheng, Haifeng Huang, <strong class="highlight">Jiageng Liu</strong>, Li Tang, Linjun Li, Yongqi Wang, Aoxiong Yin, Ziang Zhang, Zhou Zhao</em>
-                    <p></p>
-                    <p>
-                        <a href="https://arxiv.org/pdf/2305.14381">[pdf]</a>
-                        <a href="https://c-mcr.github.io/C-MCR/">[web]</a>
-                        <a href="files/C-MCR.txt">[bibtex]</a>
-                    </p>
-                    </td>
-                </tr>
-
-                <!-- Paper: WordDiffuser (ISCID 2023) -->
-                <tr style="background-color:#ffffff;">
-                    <!-- paper figure -->
-                    <td style="padding:20px;width:25%;vertical-align:middle">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <picture class="project-preview">
-                        <source media="(prefers-reduced-motion: reduce)" srcset="img/pub3.jpg">
-                        <img src="img/gifs/worddiffuser.gif" data-animation="img/gifs/worddiffuser.gif" data-still="img/pub3.jpg"
-                             alt="WordDiffuser — paper result sequence" title="Paper result sequence"
-                             width="320" height="320" loading="lazy" decoding="async"
-                             style="width: 200px; height: auto;">
-                      </picture>
-                    </div>
-                    </td>
-                    <!-- paper info -->
-                    <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                        WordDiffuser: Helping Beginners Cognize and Memorize Glyph-semantic Pairs Using Diffusion
-                    </span>
-                    <br>
-                    <b>ISCID 2023</b>
-                    <br>
-                    <em>Yuhang Xu, Wanxu Xia, Yipeng Chen, <strong class="highlight">Jiageng Liu</strong>, Weitao You</em>
-                    <p></p>
-                    <p>
-                        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10494249">[pdf]</a> 
-                        <a href="files/WordDiffuser.txt">[bibtex]</a>
-                    </p>
-                    </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <!-- Academic service -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td style="padding:20px;width:100%;vertical-align:middle">
-                    <h2>Academic Service</h2>
-                    <p>
-                      <strong>Conference Reviewer:</strong> NeurIPS 2025, NeurIPS 2026, CVPR 2026
-                      <br>
-                      <strong>Journal Reviewer:</strong> IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), IEEE Transactions on Automation Science and Engineering (TASE), IEEE Open Journal of Intelligent Transportation Systems (OJ-ITS)
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <!-- Experience -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                  <tr>
-                    <td style="padding:20px;width:100%;vertical-align:middle">
-                      <h2>Experience</h2>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-  
-              <!-- List of experiences -->
-              <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                <tr>
-                    <td style="padding:20px;width:25%;vertical-align:middle">
-                    <strong>2025.12 - Present</strong>
-                    </td>
-                    <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                        Research Intern, <a href="https://usa.honda-ri.com/">Honda Research Institute USA</a>
-                    </span>
-                    <br>
-                    Multi-modal scene representation and navigation in Habitat; Advisor: Nirav Savaliya.
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="padding:20px;width:25%;vertical-align:middle">
-                    <strong>2025.06 - 2025.11</strong>
-                    </td>
-                    <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                        Research Leader, <a href="https://vllab.ucmerced.edu/">Vision and Learning Lab</a>, <a href="https://www.ucmerced.edu/">UC Merced</a>
-                    </span>
-                    <br>
-                    Led <em>Edit3r</em> on instant 3D scene editing from sparse, unposed images; Advisor: Ming-Hsuan Yang.
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="padding:20px;width:25%;vertical-align:middle">
-                    <strong>2025.02 - 2025.06</strong>
-                    </td>
-                    <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                        Research Leader, Microsoft Research
-                    </span>
-                    <br>
-                    MindJourney: Test-time scaling with controllable world models for 3D spatial reasoning; Advisor: Jianwei Yang.
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="padding:20px;width:25%;vertical-align:middle">
-                    <strong>2023.11 - 2024.06</strong>
-                    </td>
-                    <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                        Research Leader, MIT-IBM Watson AI Lab
-                    </span>
-                    <br>
-                    ARCHITECT and RILA for 3D scene generation and audio-visual navigation;
-                    </td>
-                </tr>
-                </tbody>
-              </table>
-
-            <!-- Education -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                  <tr>
-                    <td style="padding:20px;width:100%;vertical-align:middle">
-                      <h2>Education</h2>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <!-- List of education -->
-              <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                <tbody>
-                <tr>
-                    <td style="padding:20px;width:25%;vertical-align:middle">
-                    <strong>2026.05 - Present</strong>
-                    </td>
-                    <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                        Ph.D. in Civil and Environmental Engineering, UCLA
-                    </span>
-                    <br>
-                    Mobility Lab; advised by Jiaqi Ma.
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="padding:20px;width:25%;vertical-align:middle">
-                    <strong>2024.09 - 2025.12</strong>
-                    </td>
-                    <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                        M.S. in Computer Science, University of Massachusetts Amherst
-                    </span>
-                    <br>
-                    College of Information and Computer Sciences (GPA: 4.00/4.00).
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="padding:20px;width:25%;vertical-align:middle">
-                    <strong>2020.09 - 2024.07</strong>
-                    </td>
-                    <td style="padding:20px;width:75%;vertical-align:middle">
-                    <span class="papertitle">
-                        B.S. in Artificial Intelligence, Zhejiang University
-                    </span>
-                    <br>
-                    Turing Class, Chu Kochen Honors College; GPA: 3.75/4.00 (Major GPA 3.96/4.00).
-                    </td>
-                </tr>
-
-                </tbody>
-              </table>
-
-            <!-- 空行 -->
-            <div style="height: 30px;"></div>
-
-            <table style="width:100%;max-width:400px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td>
-                    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=3uwex53UV-48AgGnPJ7EjlvIVCs7agcY4BkHQyXhPc0"></script>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align:center;">
-                    <p style="font-size:small;">Last update: May. 2026</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td>
-                    <p style="text-align:right;font-size:small;">
-                      Thanks to <a href="https://jonbarron.info/">Jon Barron</a> for providing this amazing template.<br>
-                      </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <script src="scripts/project-previews.js" defer></script>
-  </body>
+    </section>
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading"><span aria-hidden="true">✉️</span> Get in Touch</h2>
+      <p>Feel free to reach out at <a href="mailto:jiagengliu02@g.ucla.edu">jiagengliu02@g.ucla.edu</a>.</p>
+      <details class="availability"><summary>View my availability</summary><p>Calendar shown in Pacific Time.</p><iframe title="Jiageng Liu's availability calendar" src="https://calendar.google.com/calendar/embed?src=jiagengliu02%40g.ucla.edu&amp;ctz=America%2FLos_Angeles&amp;mode=WEEK&amp;hl=en" width="760" height="500" loading="lazy"></iframe></details>
+    </section>
+    <footer>
+      <p>Last updated: October 2026 · <a href="#about">Back to top ↑</a></p>
+      <p>Layout inspired by <a href="https://sheriyuo.github.io/">Xiuyu Li's homepage</a>. Original homepage based on <a href="https://jonbarron.info/">Jon Barron's template</a>.</p>
+      <details class="visitor-details"><summary>Visitor map</summary><div class="visitor-map"><script id="clstr_globe" src="https://clustrmaps.com/globe.js?d=3uwex53UV-48AgGnPJ7EjlvIVCs7agcY4BkHQyXhPc0" async></script></div></details>
+    </footer>
+  </main>
+</div>
+<script src="scripts/project-previews.js" defer></script>
+</body>
 </html>
