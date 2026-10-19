@@ -79,13 +79,16 @@
       "file": "mindjourney-swmsvc1.m4v",
       "url": "https://umass-embodied-agi.github.io/MindJourney/static/videos/SWMSVC_1.m4v",
       "start": 1,
-      "duration": 9.6,
-      "caption": "Controllable world-model navigation demo \u00b7 2x",
+      "duration": 5.12,
+      "caption": "Controllable world-model navigation demo \u00b7 natural speed, motion interpolation",
       "kind": "official-video-excerpt",
       "source_sha256": "56ebcf3b567261dfc91a5adb6a746f03ff35ce8f0a24d3f87c98ab254a64fb3c",
       "width": 320,
       "height": 201,
-      "crop": "crop=456:286:490:190"
+      "crop": "crop=456:286:490:190",
+      "fps": 25,
+      "smooth": true,
+      "loop_blend_seconds": 0.32
     },
     {
       "id": "architect",
@@ -106,13 +109,16 @@
       "file": "rila.mp4",
       "url": "https://rila-savn.github.io/RILA/images/demo.mp4",
       "start": 10,
-      "duration": 4.8,
+      "duration": 5.12,
       "crop": "crop=500:225:260:175",
-      "caption": "Audio-visual navigation: map + agent view",
+      "caption": "Audio-visual navigation: map + agent view \u00b7 motion interpolation",
       "kind": "official-video-excerpt",
       "source_sha256": "755b9ff4575103b324499798188ccc1da8fd629e3872d9cd0596cdaf08085bba",
       "width": 320,
-      "height": 143
+      "height": 143,
+      "fps": 25,
+      "smooth": true,
+      "loop_blend_seconds": 0.32
     },
     {
       "id": "lsm-vlm",

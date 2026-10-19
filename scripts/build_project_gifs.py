@@ -52,15 +52,17 @@ VIDEOS = [
          caption='City-scale traffic simulation'),
     dict(id='mindjourney', title='MindJourney', file='mindjourney-swmsvc1.m4v',
          url='https://umass-embodied-agi.github.io/MindJourney/static/videos/SWMSVC_1.m4v',
-         start=1, duration=9.6, crop='crop=456:286:490:190',
-         caption='Controllable world-model navigation demo · 2x'),
+         start=1, duration=5.12, crop='crop=456:286:490:190',
+         fps=25, smooth=True, loop_blend_seconds=0.32,
+         caption='Controllable world-model navigation demo · natural speed, motion interpolation'),
     dict(id='architect', title='ARCHITECT', file='architect-restaurant.mp4',
          url='https://wangyian-me.github.io/Architect/static/videos/restaurant.mp4',
          start=0, duration=4.8, caption='Generated 3D scene: restaurant'),
     dict(id='rila', title='RILA', file='rila.mp4',
          url='https://rila-savn.github.io/RILA/images/demo.mp4',
-         start=10, duration=4.8, crop='crop=500:225:260:175',
-         caption='Audio-visual navigation: map + agent view'),
+         start=10, duration=5.12, crop='crop=500:225:260:175',
+         fps=25, smooth=True, loop_blend_seconds=0.32,
+         caption='Audio-visual navigation: map + agent view · motion interpolation'),
 ]
 
 
@@ -72,7 +74,7 @@ def asset(cache, name, url):
     return path
 
 
-def encode(name, frames):
+def encode(name, frames, fps=FPS):
     # A single palette prevents color flicker between frames.
     with tempfile.TemporaryDirectory(prefix='project-gif-') as temp:
         temp = Path(temp)
@@ -80,7 +82,7 @@ def encode(name, frames):
             frame.save(temp / f'{i:03}.png')
         subprocess.run([
             'ffmpeg', '-v', 'error', '-y', '-threads', '1',
-            '-framerate', str(FPS), '-i', str(temp / '%03d.png'),
+            '-framerate', str(fps), '-i', str(temp / '%03d.png'),
             '-filter_complex_threads', '1', '-filter_complex',
             '[0:v]scale=320:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=96:reserve_transparent=1[p];'
             '[b][p]paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle',
@@ -91,21 +93,35 @@ def encode(name, frames):
 
 def video_frames(spec, cache):
     source = asset(cache, spec['file'], spec['url'])
-    filters = [f'setpts=(PTS-STARTPTS)*{4.8 / spec["duration"]}']
+    fps = spec.get('fps', FPS)
+    blend_count = round(spec.get('loop_blend_seconds', 0) * fps)
+    frame_count = round(4.8 * fps) + blend_count
+    output_seconds = frame_count / fps
+    filters = [f'setpts=(PTS-STARTPTS)*{output_seconds / spec["duration"]}']
     if spec.get('crop'):
         filters.append(spec['crop'])
     # Preserve the footage's own aspect ratio: no title bars or letterboxing.
-    filters += ['fps=10', 'scale=320:-1:flags=lanczos', 'setsar=1']
+    filters += ['scale=320:-1:flags=lanczos', 'setsar=1']
+    if spec.get('smooth'):
+        # Navigation demos repeat simulation steps; interpolate across those holds.
+        filters += ['fps=5', f'minterpolate=fps={fps}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1:scd=none']
+    else:
+        filters.append(f'fps={fps}')
     with tempfile.TemporaryDirectory(prefix='project-frames-') as temp:
         subprocess.run([
             'ffmpeg', '-v', 'error', '-threads', '1', '-ss', str(spec['start']), '-i', str(source),
-            '-an', '-vf', ','.join(filters), '-frames:v', str(FRAMES),
+            '-an', '-vf', ','.join(filters), '-frames:v', str(frame_count),
             '-threads', '1', str(Path(temp) / '%03d.png'),
         ], check=True)
         paths = sorted(Path(temp).glob('*.png'))
-        if len(paths) != FRAMES:
+        if len(paths) != frame_count:
             raise ValueError(f'Incomplete excerpt: {spec["id"]}')
         frames = [Image.open(path).convert('RGB') for path in paths]
+    if blend_count:
+        # Wrap the last short segment onto the opening, keeping forward motion.
+        tail = [Image.blend(frames[-blend_count+i], frames[i], (i+1)/blend_count)
+                for i in range(blend_count)]
+        frames = frames[blend_count:-blend_count] + tail
     return frames, hashlib.sha256(source.read_bytes()).hexdigest()
 
 
@@ -188,7 +204,7 @@ def main():
     records=[]
     for spec in VIDEOS:
         frames, sha=video_frames(spec,args.cache)
-        encode(spec['id'],frames)
+        encode(spec['id'],frames,fps=spec.get('fps',FPS))
         records.append(dict(spec,kind='official-video-excerpt',source_sha256=sha))
     for name,frames,record in [
         ('lsm-vlm',lsm_frames(),dict(kind='method-schematic',source='files/lsm-vlm.pdf',note='Illustration of the method; not a recorded inference run. Demo URL returned 404.')),
