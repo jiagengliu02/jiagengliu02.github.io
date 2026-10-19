@@ -34,17 +34,17 @@ def font(size, bold=False):
 VIDEOS = [
     dict(id='autoagent0', title='AutoAgent0', file='auto-main.mp4',
          url='https://jiagengliu02.github.io/AutoAgent0/assets/videos/AutoAgent0_demo.mp4',
-         start=46, duration=9.6, crop='crop=1280:640:80:390',
+         start=46, duration=9.6, crop='crop=1260:610:90:400',
          caption='Verified obstacle bypass · 2x'),
-    dict(id='esi-bench', title='ESI-Bench', file='esi-bench.mp4',
-         url='https://esi-bench.github.io/static/vids/qualitative/pour_down.mp4',
-         start=0, duration=4.8, caption='Embodied interaction: pour down'),
+    dict(id='esi-bench', title='ESI-Bench', file='esi-spatial.mp4',
+         url='https://esi-bench.github.io/static/imgs/specular_reflection/reflection_spatial_relation.mp4',
+         start=0, duration=6.8, caption='Mirror reflection and spatial relations · 1.42x'),
     dict(id='av-phys-bench', title='AV-Phys-Bench', file='av-coin.mp4',
          url='https://huggingface.co/datasets/ZijunCui/AV-Phys-Bench/resolve/main/videos/Seedance-2.0/C1-1-01.mp4',
          start=0.5, duration=4.8, caption='Seedance 2.0 · spinning coin · silent'),
     dict(id='edit3r', title='Edit3r', file='edit3r.mp4',
          url='https://edit3r.github.io/edit3r/static/videos/example1.mp4',
-         start=0.2, duration=4.8, crop='crop=1032:590:137:336',
+         start=0.2, duration=4.8, crop='crop=1032:512:137:336',
          caption='Original → edited: decorate for a party'),
     dict(id='virtual-community', title='Virtual Community', file='virtual-community.mp4',
          url='https://virtual-community-ai.github.io/_astro/traffic_demo.DEFnM9xd.mp4',
@@ -58,7 +58,7 @@ VIDEOS = [
          start=0, duration=4.8, caption='Generated 3D scene: restaurant'),
     dict(id='rila', title='RILA', file='rila.mp4',
          url='https://rila-savn.github.io/RILA/images/demo.mp4',
-         start=10, duration=4.8, crop='crop=520:245:260:175',
+         start=10, duration=4.8, crop='crop=500:225:260:175',
          caption='Audio-visual navigation: map + agent view'),
 ]
 
@@ -71,14 +71,6 @@ def asset(cache, name, url):
     return path
 
 
-def base(title, caption):
-    im = Image.new('RGB', (W, H), 'white')
-    d = ImageDraw.Draw(im)
-    d.text((12, 6), title, font=font(15, True), fill=INK)
-    d.text((12, 253), caption, font=font(12), fill=MUTED)
-    return im
-
-
 def encode(name, frames):
     # A single palette prevents color flicker between frames.
     with tempfile.TemporaryDirectory(prefix='project-gif-') as temp:
@@ -89,7 +81,7 @@ def encode(name, frames):
             'ffmpeg', '-v', 'error', '-y', '-threads', '1',
             '-framerate', str(FPS), '-i', str(temp / '%03d.png'),
             '-filter_complex_threads', '1', '-filter_complex',
-            '[0:v]scale=320:218:flags=lanczos,split[a][b];[a]palettegen=max_colors=96:reserve_transparent=1[p];'
+            '[0:v]scale=320:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=96:reserve_transparent=1[p];'
             '[b][p]paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle',
             '-loop', '0', str(OUT / f'{name}.gif'),
         ], check=True)
@@ -101,21 +93,18 @@ def video_frames(spec, cache):
     filters = [f'setpts=(PTS-STARTPTS)*{4.8 / spec["duration"]}']
     if spec.get('crop'):
         filters.append(spec['crop'])
-    filters += ['fps=10', 'scale=400:220:force_original_aspect_ratio=decrease:flags=lanczos',
-                'pad=400:220:(ow-iw)/2:(oh-ih)/2:white', 'setsar=1']
-    result = subprocess.run([
-        'ffmpeg', '-v', 'error', '-threads', '1', '-ss', str(spec['start']), '-i', str(source),
-        '-an', '-vf', ','.join(filters), '-frames:v', str(FRAMES),
-        '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-threads', '1', 'pipe:1',
-    ], check=True, stdout=subprocess.PIPE)
-    frame_bytes = 400 * 220 * 3
-    if len(result.stdout) != FRAMES * frame_bytes:
-        raise ValueError(f'Incomplete excerpt: {spec["id"]}')
-    frames = []
-    for i in range(FRAMES):
-        im = base(spec['title'], spec['caption'])
-        im.paste(Image.frombytes('RGB', (400, 220), result.stdout[i*frame_bytes:(i+1)*frame_bytes]), (0, 28))
-        frames.append(im)
+    # Preserve the footage's own aspect ratio: no title bars or letterboxing.
+    filters += ['fps=10', 'scale=320:-1:flags=lanczos', 'setsar=1']
+    with tempfile.TemporaryDirectory(prefix='project-frames-') as temp:
+        subprocess.run([
+            'ffmpeg', '-v', 'error', '-threads', '1', '-ss', str(spec['start']), '-i', str(source),
+            '-an', '-vf', ','.join(filters), '-frames:v', str(FRAMES),
+            '-threads', '1', str(Path(temp) / '%03d.png'),
+        ], check=True)
+        paths = sorted(Path(temp).glob('*.png'))
+        if len(paths) != FRAMES:
+            raise ValueError(f'Incomplete excerpt: {spec["id"]}')
+        frames = [Image.open(path).convert('RGB') for path in paths]
     return frames, hashlib.sha256(source.read_bytes()).hexdigest()
 
 
@@ -125,7 +114,7 @@ def lsm_frames():
     labels = ['Observe', 'Store memory', 'Imagine views', 'Update & reason']
     for i in range(FRAMES):
         stage = i // 12
-        im = base('LSM-VLM', 'Method schematic · perception / memory loop')
+        im = Image.new('RGB', (W, H), 'white')
         d = ImageDraw.Draw(im)
         for j, label in enumerate(labels):
             x = 8 + j * 98
@@ -158,7 +147,7 @@ def lsm_frames():
         if stage == 3:
             d.rounded_rectangle((222, 67, 378, 79), 4, fill='#ccebdd')
             d.text((227, 68), 'Evidence → memory update', font=font(9), fill='#226647')
-        frames.append(im)
+        frames.append(im.crop((8, 35, 393, 234)))
     return frames
 
 
@@ -167,20 +156,14 @@ def cmcr_frames(cache):
     frames = []
     for i in range(FRAMES):
         selected = i // 16
-        im = base('C-MCR', 'Official retrieval results · silent preview')
+        im = Image.new('RGB', (360, 120), 'white')
         d = ImageDraw.Draw(im)
-        d.text((14, 40), 'Audio query: fireworks', font=font(16, True), fill=INK)
-        d.text((14, 65), 'Audio → shared space → images', font=font(13), fill=MUTED)
-        # Progress is a presentation cue, not a fabricated audio waveform.
-        d.rounded_rectangle((14, 91, 386, 97), 3, fill='#e5ecf7')
-        d.rounded_rectangle((14, 91, 15 + int(371*(i+1)/FRAMES), 97), 3, fill=BLUE)
         for j,path in enumerate(paths):
-            x = 14 + 127*j
-            tile = ImageOps.fit(Image.open(path).convert('RGB'), (116, 116))
-            im.paste(tile, (x, 112))
+            x = 120*j
+            tile = ImageOps.fit(Image.open(path).convert('RGB'), (120, 120))
+            im.paste(tile, (x, 0))
             if j == selected:
-                d.rectangle((x-2,110,x+117,229),outline=BLUE,width=3)
-            d.text((x+33,232), f'Rank {j+1}', font=font(11), fill=BLUE if j==selected else MUTED)
+                d.rectangle((x,0,x+119,119),outline=BLUE,width=3)
         frames.append(im)
     return frames
 
@@ -188,24 +171,8 @@ def cmcr_frames(cache):
 def word_frames():
     original = Image.open(ROOT / 'img' / 'pub3.jpg').convert('RGB')
     boxes = [(365,772,512,920),(519,772,667,920),(674,772,821,920)]
-    panels = [ImageOps.fit(original.crop(box),(170,170),method=Image.Resampling.LANCZOS) for box in boxes]
-    frames = []
-    labels = ['Oracle glyph','Shape optimized','Style enhanced']
-    for i in range(FRAMES):
-        stage = i // 16
-        im = base('WordDiffuser', 'Paper example · three-stage result sequence')
-        d = ImageDraw.Draw(im)
-        im.paste(panels[stage], (16,65))
-        d.text((16, 38), 'Glyph → meaning', font=font(15,True), fill=INK)
-        for j,label in enumerate(labels):
-            y=85+j*52
-            d.ellipse((210,y,232,y+22),fill=BLUE if j==stage else '#e5ecf7')
-            d.text((217,y+4),str(j+1),font=font(11),fill='white' if j==stage else MUTED)
-            d.text((242,y+4),label,font=font(13,j==stage),fill=INK if j==stage else MUTED)
-            if j<2:
-                d.line((221,y+26,221,y+46),fill='#c9d7e8',width=2)
-        frames.append(im)
-    return frames
+    panels = [ImageOps.fit(original.crop(box),(320,320),method=Image.Resampling.LANCZOS) for box in boxes]
+    return [panels[i // 16].copy() for i in range(FRAMES)]
 
 
 def main():
@@ -229,7 +196,10 @@ def main():
     ]:
         encode(name,frames)
         records.append(dict(id=name,**record))
-    (OUT/'sources.json').write_text(json.dumps(dict(width=320,height=218,duration_seconds=4.8,fps=FPS,loop=True,projects=records),indent=2)+'\n')
+    for record in records:
+        with Image.open(OUT / f'{record["id"]}.gif') as image:
+            record['width'], record['height'] = image.size
+    (OUT/'sources.json').write_text(json.dumps(dict(width=320,duration_seconds=4.8,fps=FPS,loop=True,presentation='Content only; native aspect ratios, no added captions or padding.',projects=records),indent=2)+'\n')
 
 
 if __name__ == '__main__':

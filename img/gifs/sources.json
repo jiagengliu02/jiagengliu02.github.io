@@ -1,9 +1,9 @@
 {
   "width": 320,
-  "height": 218,
   "duration_seconds": 4.8,
   "fps": 10,
   "loop": true,
+  "presentation": "Content only; native aspect ratios, no added captions or padding.",
   "projects": [
     {
       "id": "autoagent0",
@@ -12,21 +12,25 @@
       "url": "https://jiagengliu02.github.io/AutoAgent0/assets/videos/AutoAgent0_demo.mp4",
       "start": 46,
       "duration": 9.6,
-      "crop": "crop=1280:640:80:390",
+      "crop": "crop=1260:610:90:400",
       "caption": "Verified obstacle bypass \u00b7 2x",
       "kind": "official-video-excerpt",
-      "source_sha256": "e25f295a5b9650f50603c482d70dc6898fd51153cbb2cd4f4cc08ebb010dfdb0"
+      "source_sha256": "e25f295a5b9650f50603c482d70dc6898fd51153cbb2cd4f4cc08ebb010dfdb0",
+      "width": 320,
+      "height": 155
     },
     {
       "id": "esi-bench",
       "title": "ESI-Bench",
-      "file": "esi-bench.mp4",
-      "url": "https://esi-bench.github.io/static/vids/qualitative/pour_down.mp4",
+      "file": "esi-spatial.mp4",
+      "url": "https://esi-bench.github.io/static/imgs/specular_reflection/reflection_spatial_relation.mp4",
       "start": 0,
-      "duration": 4.8,
-      "caption": "Embodied interaction: pour down",
+      "duration": 6.8,
+      "caption": "Mirror reflection and spatial relations \u00b7 1.42x",
       "kind": "official-video-excerpt",
-      "source_sha256": "4c56789a6eeb36d5014ce2bc835b85e31ea07baf2b0e31b7788e20dbc817a5e4"
+      "source_sha256": "8e641218e0cef704302e2e7e9ca095899ab84f6be1b3d73405e7d633217034fb",
+      "width": 320,
+      "height": 180
     },
     {
       "id": "av-phys-bench",
@@ -37,7 +41,9 @@
       "duration": 4.8,
       "caption": "Seedance 2.0 \u00b7 spinning coin \u00b7 silent",
       "kind": "official-video-excerpt",
-      "source_sha256": "7bc15703362e73acb92138be47a8b11cf7c44fb2e86e8a74d7a706737871e5c8"
+      "source_sha256": "7bc15703362e73acb92138be47a8b11cf7c44fb2e86e8a74d7a706737871e5c8",
+      "width": 320,
+      "height": 180
     },
     {
       "id": "edit3r",
@@ -46,10 +52,12 @@
       "url": "https://edit3r.github.io/edit3r/static/videos/example1.mp4",
       "start": 0.2,
       "duration": 4.8,
-      "crop": "crop=1032:590:137:336",
+      "crop": "crop=1032:512:137:336",
       "caption": "Original \u2192 edited: decorate for a party",
       "kind": "official-video-excerpt",
-      "source_sha256": "a1d58bfdde5452c8c80ff35165a6611a78487f0e6f812f689fe175d08afd2fc0"
+      "source_sha256": "a1d58bfdde5452c8c80ff35165a6611a78487f0e6f812f689fe175d08afd2fc0",
+      "width": 320,
+      "height": 159
     },
     {
       "id": "virtual-community",
@@ -61,7 +69,9 @@
       "crop": "crop=1920:920:0:160",
       "caption": "City-scale traffic simulation",
       "kind": "official-video-excerpt",
-      "source_sha256": "d97b0fb6dc4212e3bacb33deb5f30afadef8787bab854cb8aea017eb275da456"
+      "source_sha256": "d97b0fb6dc4212e3bacb33deb5f30afadef8787bab854cb8aea017eb275da456",
+      "width": 320,
+      "height": 153
     },
     {
       "id": "mindjourney",
@@ -72,7 +82,9 @@
       "duration": 8,
       "caption": "World-model trajectory expansion \u00b7 1.67x",
       "kind": "official-video-excerpt",
-      "source_sha256": "7431c6011b2d35953839e786f0099eddde3f30edce4ad42950934221fe8d89af"
+      "source_sha256": "7431c6011b2d35953839e786f0099eddde3f30edce4ad42950934221fe8d89af",
+      "width": 320,
+      "height": 126
     },
     {
       "id": "architect",
@@ -83,7 +95,9 @@
       "duration": 4.8,
       "caption": "Generated 3D scene: restaurant",
       "kind": "official-video-excerpt",
-      "source_sha256": "53e3ef30fa6bebd6a8b01bc95908b70b31bac906a5ed8e6341e7cd07e1a7c9ff"
+      "source_sha256": "53e3ef30fa6bebd6a8b01bc95908b70b31bac906a5ed8e6341e7cd07e1a7c9ff",
+      "width": 320,
+      "height": 320
     },
     {
       "id": "rila",
@@ -92,16 +106,20 @@
       "url": "https://rila-savn.github.io/RILA/images/demo.mp4",
       "start": 10,
       "duration": 4.8,
-      "crop": "crop=520:245:260:175",
+      "crop": "crop=500:225:260:175",
       "caption": "Audio-visual navigation: map + agent view",
       "kind": "official-video-excerpt",
-      "source_sha256": "755b9ff4575103b324499798188ccc1da8fd629e3872d9cd0596cdaf08085bba"
+      "source_sha256": "755b9ff4575103b324499798188ccc1da8fd629e3872d9cd0596cdaf08085bba",
+      "width": 320,
+      "height": 143
     },
     {
       "id": "lsm-vlm",
       "kind": "method-schematic",
       "source": "files/lsm-vlm.pdf",
-      "note": "Illustration of the method; not a recorded inference run. Demo URL returned 404."
+      "note": "Illustration of the method; not a recorded inference run. Demo URL returned 404.",
+      "width": 320,
+      "height": 165
     },
     {
       "id": "c-mcr",
@@ -112,14 +130,18 @@
         "https://c-mcr.github.io/C-MCR/a2i/images/audio1_ours1.jpg",
         "https://c-mcr.github.io/C-MCR/a2i/images/audio1_ours2.jpg"
       ],
-      "note": "Fireworks audio query, top three official retrieved images. GIF has no audio."
+      "note": "Fireworks audio query, top three official retrieved images. GIF has no audio.",
+      "width": 320,
+      "height": 107
     },
     {
       "id": "worddiffuser",
       "kind": "paper-result-sequence",
       "source": "img/pub3.jpg",
       "paper": "files/WordDiffuser.pdf",
-      "note": "Three published stages; transitions are a presentation, not intermediate diffusion samples."
+      "note": "Three published stages; transitions are a presentation, not intermediate diffusion samples.",
+      "width": 320,
+      "height": 320
     }
   ]
 }
