@@ -118,8 +118,12 @@ summary { cursor: pointer; }
 .availability iframe { display: block; width: 100%; border: 1px solid var(--line); border-radius: 4px; }
 footer { padding: 22px 0 36px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
 footer p { margin-bottom: 7px; }
-.visitor-details { margin-top: 15px; }
-.visitor-map { max-width: 260px; }
+.visitor-section { margin-top: 22px; }
+.visitor-section h3 { margin: 0 0 12px; font-size: 13px; font-weight: 600; }
+.visitor-map { width: 260px; max-width: 100%; }
+.visitor-map-status { width: 320px; max-width: 100%; padding: 12px 14px; border: 1px solid var(--accent-line); border-radius: 8px; background: var(--accent-soft); font-size: 12px; }
+.visitor-map-status p { margin: 0; }
+.visitor-map-status button { margin-top: 8px; padding: 4px 10px; border: 1px solid var(--accent-line); border-radius: 5px; background: var(--surface); color: var(--accent); cursor: pointer; font-size: 12px; }
 @media (min-width: 1440px) { .site-layout, .top-nav { max-width: 1240px; } }
 @media (max-width: 1000px) {
   .site-layout { grid-template-columns: 185px minmax(0, 1fr); gap: 32px; padding: 30px 24px 0; }

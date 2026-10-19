@@ -76,15 +76,16 @@
     {
       "id": "mindjourney",
       "title": "MindJourney",
-      "file": "mindjourney.mp4",
-      "url": "https://umass-embodied-agi.github.io/MindJourney/static/videos/traj_expansion.mov",
-      "start": 0,
-      "duration": 8,
-      "caption": "World-model trajectory expansion \u00b7 1.67x",
+      "file": "mindjourney-swmsvc1.m4v",
+      "url": "https://umass-embodied-agi.github.io/MindJourney/static/videos/SWMSVC_1.m4v",
+      "start": 1,
+      "duration": 9.6,
+      "caption": "Controllable world-model navigation demo \u00b7 2x",
       "kind": "official-video-excerpt",
-      "source_sha256": "7431c6011b2d35953839e786f0099eddde3f30edce4ad42950934221fe8d89af",
+      "source_sha256": "56ebcf3b567261dfc91a5adb6a746f03ff35ce8f0a24d3f87c98ab254a64fb3c",
       "width": 320,
-      "height": 126
+      "height": 201,
+      "crop": "crop=456:286:490:190"
     },
     {
       "id": "architect",
