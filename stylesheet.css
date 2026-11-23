@@ -85,7 +85,7 @@ main { min-width: 0; }
 main > section { margin-bottom: 52px; }
 main > section > p { max-width: var(--measure); }
 #about { margin-bottom: 46px; }
-.lede { max-width: 18em; margin: 2px 0 26px; color: var(--strong); font-size: 42px; font-weight: 700; line-height: 1.17; letter-spacing: -1.1px; text-wrap: balance; }
+.lede { max-width: 21em; margin: 2px 0 26px; color: var(--strong); font-size: 38px; font-weight: 700; line-height: 1.17; letter-spacing: -1.1px; text-wrap: balance; }
 .section-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 12px; margin-bottom: 22px; border-bottom: 1px solid var(--line); }
 .section-heading h2 { padding: 0; border: 0; margin: 0; }
 #animation-toggle { background: var(--surface); color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; font-size: 12px; white-space: nowrap; }
