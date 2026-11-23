@@ -105,6 +105,8 @@ main > section > p { max-width: var(--measure); }
 .paper-visual:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px rgba(19, 33, 46, .1), 0 22px 32px -18px rgba(19, 33, 46, .5); }
 .project-preview, .project-preview img { display: block; width: 100%; height: 100%; }
 .project-preview img { object-fit: cover; object-position: center; }
+.paper-visual.fit { background: #fff; }
+.paper-visual.fit .project-preview img { object-fit: contain; }
 .paper-content { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
 .paper-content h4 { font-size: 19px; font-weight: 700; line-height: 1.35; letter-spacing: -.2px; margin: 0 0 8px; }
 .paper-content h4 a { color: var(--strong); }
@@ -134,6 +136,10 @@ summary { cursor: pointer; }
 .timeline li:last-child > div { padding-bottom: 2px; }
 .timeline li > div::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); }
 .timeline li.current > div::before { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 0 3px var(--surface); }
+.timeline li.has-logo > div { padding-left: 36px; }
+.timeline li.has-logo > div::before { display: none; }
+.org-logo { position: absolute; left: -19px; top: -3px; width: 36px; height: 36px; padding: 2px; border-radius: 8px; background: #fff; object-fit: contain; box-shadow: 0 0 0 1px var(--line); }
+.timeline li.current .org-logo { box-shadow: 0 0 0 2px var(--gold); }
 .timeline h3 { margin: 0 0 5px; font-size: 16px; font-weight: 700; line-height: 1.55; }
 .timeline p { max-width: 640px; font-size: 14px; line-height: 1.65; margin: 0; }
 #service p { font-size: 15px; line-height: 1.9; }
@@ -199,6 +205,8 @@ footer p { margin-bottom: 7px; }
   .timeline li { grid-template-columns: 1fr; gap: 3px; margin-bottom: 20px; }
   .timeline li > div { padding: 0; border-left: 0; }
   .timeline li > div::before { display: none; }
+  .timeline li.has-logo > div { padding-left: 0; }
+  .org-logo { position: static; display: block; width: 32px; height: 32px; margin: 4px 0 7px; }
   .news-list li { grid-template-columns: 65px minmax(0, 1fr); gap: 9px; }
   .section-heading { gap: 10px; }
   #animation-toggle { font-size: 11px; padding: 5px 7px; }
