@@ -48,6 +48,7 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 p { margin: 0 0 15px; }
 strong { color: var(--strong); font-weight: 600; }
+a strong { color: inherit; }
 h1, h2, h3, h4 { color: var(--strong); line-height: 1.3; font-weight: 600; }
 h2 { display: flex; align-items: center; gap: 13px; margin: 0 0 22px; padding-bottom: 12px; border-bottom: 1px solid var(--line); font-size: 28px; font-weight: 700; letter-spacing: -.5px; }
 h2::before { content: ""; flex: 0 0 11px; height: 11px; margin-top: -2px; border-radius: 2px; background: var(--gold); }
